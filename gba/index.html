@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Emerald - Emulator</title>
+    <script src="https://cdn.jsdelivr.net/npm/nostalgist"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #button-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pokemon Emerald Emulator</h1>
+    <div id="button-container">
+        <button id="saveButton">Save Game</button>
+        <button id="loadButton">Load Game</button>
+    </div>
+
+    <script>
+        let state;
+
+        async function run() {
+            await Nostalgist.gba('https://dylansantwani.github.io/pokemon-emerald/Pokemon - Emerald Version (U).gba');
+        }
+
+        async function save() {
+            state = await Nostalgist.saveState();
+            alert("Game saved successfully!");
+        }
+
+        async function load() {
+            if (state) {
+                await Nostalgist.loadState(state);
+                alert("Game loaded successfully!");
+            } else {
+                alert("No saved state found. Please save your game first!");
+            }
+        }
+
+        document.getElementById("saveButton").addEventListener("click", save);
+        document.getElementById("loadButton").addEventListener("click", load);
+
+        run();
+    </script>
+</body>
+
+</html>
