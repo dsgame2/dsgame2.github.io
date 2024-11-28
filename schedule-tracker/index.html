@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #output {
+            font-size: 1.5em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Schedule</h1>
+    <div id="output">
+        <p id="current-period">Now: Loading...</p>
+        <p id="time-left">End: Loading...</p>
+    </div>
+
+    <script>
+        function toSeconds(h, m, s) {
+            return h * 3600 + m * 60 + s;
+        }
+
+        function getCurrentPeriod() {
+            const now = new Date();
+            const currentSeconds = toSeconds(now.getHours(), now.getMinutes(), now.getSeconds());
+
+            const schedule = {
+                Monday: [
+                    ["07:45", "08:35", "Period 1"],
+                    ["08:35", "08:41", "Pass"],
+                    ["08:41", "09:34", "Period 2"],
+                    ["09:34", "09:40", "Pass"],
+                    ["09:40", "10:30", "Period 3"],
+                    ["10:30", "10:36", "Pass"],
+                    ["10:36", "11:26", "Period 4"],
+                    ["11:26", "11:32", "Pass"],
+                    ["11:32", "12:22", "Period 5"],
+                    ["12:22", "12:28", "Pass"],
+                    ["12:28", "13:18", "Period 6"],
+                    ["13:18", "13:24", "Pass"],
+                    ["13:24", "14:14", "Period 7"],
+                    ["14:14", "14:20", "Pass"],
+                    ["14:20", "15:10", "Period 8"],
+                ],
+                Tuesday: [
+                    ["07:45", "08:30", "Period 1"],
+                    ["08:30", "08:35", "Pass"],
+                    ["08:35", "09:20", "Period 2"],
+                    ["09:20", "09:25", "Pass"],
+                    ["09:25", "10:10", "Soar"],
+                    ["10:10", "10:15", "Pass"],
+                    ["10:15", "11:00", "Period 3"],
+                    ["11:00", "11:05", "Pass"],
+                    ["11:05", "11:50", "Period 4"],
+                    ["11:50", "11:55", "Pass"],
+                    ["11:55", "12:40", "Period 5"],
+                    ["12:40", "12:45", "Pass"],
+                    ["12:45", "13:30", "Period 6"],
+                    ["13:30", "13:35", "Pass"],
+                    ["13:35", "14:20", "Period 7"],
+                    ["14:20", "14:25", "Pass"],
+                    ["14:25", "15:10", "Period 8"],
+                ],
+                Wednesday: [
+                    ["09:00", "09:42", "Period 1"],
+                    ["09:42", "09:47", "Pass"],
+                    ["09:47", "10:29", "Period 2"],
+                    ["10:29", "10:34", "Pass"],
+                    ["10:34", "11:16", "Period 3"],
+                    ["11:16", "11:21", "Pass"],
+                    ["11:21", "12:03", "Period 4"],
+                    ["12:03", "12:08", "Pass"],
+                    ["12:08", "12:49", "Period 5"],
+                    ["12:49", "12:54", "Pass"],
+                    ["12:54", "13:36", "Period 6"],
+                    ["13:36", "13:41", "Pass"],
+                    ["13:41", "14:23", "Period 7"],
+                    ["14:23", "14:28", "Pass"],
+                    ["14:28", "15:10", "Period 8"],
+                ],
+                Thursday: [
+                    ["07:45", "08:30", "Period 1"],
+                    ["08:30", "08:35", "Pass"],
+                    ["08:35", "09:20", "Period 2"],
+                    ["09:20", "09:25", "Pass"],
+                    ["09:25", "10:10", "Soar"],
+                    ["10:10", "10:15", "Pass"],
+                    ["10:15", "11:00", "Period 3"],
+                    ["11:00", "11:05", "Pass"],
+                    ["11:05", "11:50", "Period 4"],
+                    ["11:50", "11:55", "Pass"],
+                    ["11:55", "12:40", "Period 5"],
+                    ["12:40", "12:45", "Pass"],
+                    ["12:45", "13:30", "Period 6"],
+                    ["13:30", "13:35", "Pass"],
+                    ["13:35", "14:20", "Period 7"],
+                    ["14:20", "14:25", "Pass"],
+                    ["14:25", "15:10", "Period 8"],
+                ],
+                Friday: [
+                    ["07:45", "08:35", "Period 1"],
+                    ["08:35", "08:41", "Pass"],
+                    ["08:41", "09:34", "Period 2"],
+                    ["09:34", "09:40", "Pass"],
+                    ["09:40", "10:30", "Period 3"],
+                    ["10:30", "10:36", "Pass"],
+                    ["10:36", "11:26", "Period 4"],
+                    ["11:26", "11:32", "Pass"],
+                    ["11:32", "12:22", "Period 5"],
+                    ["12:22", "12:28", "Pass"],
+                    ["12:28", "13:18", "Period 6"],
+                    ["13:18", "13:24", "Pass"],
+                    ["13:24", "14:14", "Period 7"],
+                    ["14:14", "14:20", "Pass"],
+                    ["14:20", "15:10", "Period 8"],
+                ]
+            };
+
+            const dayOfWeek = now.toLocaleDateString("en-US", { weekday: "long" });
+            const daySchedule = schedule[dayOfWeek] || [];
+
+            for (const [start, end, period] of daySchedule) {
+                const [startH, startM] = start.split(":").map(Number);
+                const [endH, endM] = end.split(":").map(Number);
+                const startTime = toSeconds(startH, startM, 0);
+                const endTime = toSeconds(endH, endM, 0);
+
+                if (currentSeconds >= startTime && currentSeconds < endTime) {
+                    const remaining = endTime - currentSeconds;
+                    const minutes = Math.floor(remaining / 60).toString().padStart(2, "0");
+                    const seconds = (remaining % 60).toString().padStart(2, "0");
+                    document.getElementById("current-period").textContent = `Now: ${period}`;
+                    document.getElementById("time-left").textContent = `End: ${minutes}:${seconds} min`;
+                    return;
+                }
+            }
+            document.getElementById("current-period").textContent = "Now: Weekend/After School";
+            document.getElementById("time-left").textContent = "End: --:-- min";
+        }
+
+        setInterval(getCurrentPeriod, 1000);
+        getCurrentPeriod();
+    </script>
+</body>
+</html>
