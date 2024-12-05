@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled Document - Google Docs</title>
+  <link rel="icon" type="image/x-icon" href="doc.ico">
+    <style>
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #url-input {
+            width: 80%;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        #url-input:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
+        }
+        #go-button {
+            padding: 12px 30px;
+            border-radius: 8px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #go-button:hover {
+            background-color: #005bb5;
+        }
+        #go-button:focus {
+            outline: none;
+        }
+        @media (max-width: 600px) {
+            #url-input {
+                width: 100%;
+            }
+            #go-button {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="container">
+        <h1>URL Opener</h1>
+        <input type="text" id="url-input" placeholder="Enter URL here..." />
+        <button id="go-button">Send</button>
+    </div>
+<br>
+
+
+    <script>
+        // Function that modifies the URL and opens it in a new tab
+        function openURLInNewTab() {
+            let url = document.getElementById('url-input').value.trim();
+
+            // Add 'https://' if the user doesn't input it
+            if (!url.startsWith('https://') && !url.startsWith('http://')) {
+                url = 'https://' + url;
+            }
+
+            // Replace dots with dashes to match the Google Translate URL format
+            const transformedUrl = `${url.replace('https://', 'https://').replace(/\./g, '-')}.translate.goog/?_x_tr_sl=hi&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp`;
+
+            // Open the transformed URL in a new tab
+            window.open(transformedUrl, '_blank');
+        }
+
+        // Attach event listener to "Go" button
+        document.getElementById('go-button').addEventListener('click', openURLInNewTab);
+    </script>
+
+</body>
+</html>
