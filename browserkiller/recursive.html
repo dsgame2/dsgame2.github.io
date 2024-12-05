@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECURSIVE</title>
     <link rel="icon" href="x-symbol.svg" type="image/x-icon">
 </head>
+
 <body>
     <a id="run" href="recursive.html" style="display: none;">run me</a>
     <script>
@@ -13,10 +15,14 @@
         document.getElementById('run').click();
         setInterval(run(), 100)
         let counter = 0;
-        function run(){
-            counter ++;
+        function run() {
+            counter++;
             document.title = counter;
+        }
+        while (true) {
+            Math.sqrt(Math.random());
         }
     </script>
 </body>
+
 </html>
