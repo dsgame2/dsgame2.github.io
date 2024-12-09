@@ -1,509 +1,598 @@
 <!doctype html>
 <html>
-  <html> 
-    <head>
-        <title>Untitled Document - Google Docs</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="master.css" />
-        <link rel="icon" type="image/x-icon" href="doc.ico" />
-        <style>
-            .topbutton {
-                border-radius: 5px;
-                width: 150px;
-                height: 50px;
-                font-size: medium;
-                border: 1px solid white;
-                background-color: black;
-                color: white;
-                cursor: pointer;
-            }
-        </style>
-    </head>
+    <html>
+        <head>
+            <title>Untitled Document - Google Docs</title>
+            <link rel="stylesheet" href="style.css" />
+            <link rel="stylesheet" href="master.css" />
+            <link rel="icon" type="image/x-icon" href="doc.ico" />
+            <style>
+                .topbutton {
+                    border-radius: 5px;
+                    width: 150px;
+                    height: 50px;
+                    font-size: medium;
+                    border: 1px solid white;
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                }
+            </style>
+        </head>
 
-    <body>
-        <div class="nav">
-            <ul>
-                <button
-                    onclick="window.scrollTo({top: 0, behavior: 'smooth'});"
-                    class="topbutton"
-                >
-                    Scroll to Top
-                </button>
-                <button
-                    style="margin-left: 25px"
-                    onclick="window.location.href = 'https://tvplayer.pages.dev'"
-                    class="topbutton"
-                >
-                    Watch
-                </button>
-                <button
-                    style="margin-left: 25px; float: right"
-                    onclick="window.location.href = 'backup'"
-                    class="topbutton"
-                >
-                    Backup Sites
-                </button>
-                <button
-                    style="margin-left: 25px; float: right"
-                    onclick="window.location.href = 'hosting-tutorial'"
-                    class="topbutton"
-                >
-                    Host
-                </button>
-            </ul>
-        </div>
-        <br /><br /><br /><br />
-        <h1>Games</h1>
+        <body>
+            <div class="nav">
+                <ul>
+                    <button
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'});"
+                        class="topbutton"
+                    >
+                        Scroll to Top
+                    </button>
+                    <button
+                        style="margin-left: 25px"
+                        onclick="window.location.href = 'https://tvplayer.pages.dev'"
+                        class="topbutton"
+                    >
+                        Watch
+                    </button>
+                    <button
+                        style="margin-left: 25px; float: right"
+                        onclick="window.location.href = 'backup'"
+                        class="topbutton"
+                    >
+                        Backup Sites
+                    </button>
+                    <button
+                        style="margin-left: 25px; float: right"
+                        onclick="window.location.href = 'hosting-tutorial'"
+                        class="topbutton"
+                    >
+                        Host
+                    </button>
+                </ul>
+            </div>
+            <br /><br /><br /><br />
+            <h1>Games</h1>
 
-        <h1 style="font-size: larger">Version from 12/7/24</h1>
-        <p class="request-text">
-            Send game requests to
-            <a href="mailto:dylansantwani@gmail.com">dylansantwani@gmail.com</a>
-        </p>
-
-        <style>
-            .popular {
-                color: plum;
-            }
-
-            .emulator {
-                color: #6290c3;
-            }
-
-            .notworking {
-                color: #dd6e42;
-            }
-
-            .flash {
-                color: yellowgreen;
-            }
-
-            .modded {
-                color: #f1ffe7;
-            }
-
-            .new {
-                color: #d6dbb2;
-            }
-        </style>
-        <script src="search.js"></script>
-        <p class="popular">Popular</p>
-        <p class="emulator">Emulated</p>
-        <p class="notworking">Not Working</p>
-        <p class="flash">Flash</p>
-        <p class="modded">Modded</p>
-        <p class="new">New</p>
-        <input
-            id="search"
-            type="text"
-            onchange="search()"
-            placeholder="Search..."
-            class="input"
-        />
-        <h1 style="font-size: larger"></h1>
-        <br /><br /><br />
-        <div id="parentcontainer" class="gamelist">
-            <a href="https://nchs.online/" class="gamechild popular"
-                >Time Until End of Period</a
-            >
-            <br /><br /><br />
-            <a href="https://tvplayer.pages.dev" class="gamechild popular"
-                >Watch TV/Movies</a
-            >
-            <br /><br /><br />
-
-            <a href="final-grade/" class="gamechild new"
-                >Final Grade Calculator</a
-            >
-            <br /><br /><br />
-            <a href="game2/10-minutes-till-dawn/" class="gamechild notworking"
-                >10 Minutes Till Dawn</a
-            >
-            <br /><br /><br />
-            <a href="game2/100ng" class="gamechild">100ng</a>
-            <br /><br /><br />
-            <a href="game2/1v1lol" class="gamechild">1v1LOL</a>
-            <br /><br /><br />
-            <a href="game2/1v1space" class="gamechild">1v1Space</a>
-            <br /><br /><br />
-            <a href="game2/2048-multitask" class="gamechild">2048 Multitask</a>
-            <br /><br /><br />
-            <a href="game2/2048" class="gamechild popular">2048</a>
-            <br /><br /><br />
-            <a
-                href="4th-and-goal-2022-main/4th-and-goal-2022-main/"
-                class="gamechild new"
-                >4th and Goal</a
-            >
-            <br /><br /><br />
-            <a href="game2/9007199254740992" class="gamechild"
-                >9007199254740992</a
-            >
-            <br /><br /><br />
-            <a href="game2/a-dance-of-fire-and-ice" class="gamechild"
-                >A Dance of Fire and Ice</a
-            >
-            <br /><br /><br />
-            <a href="game2/achievementunlocked" class="gamechild"
-                >Achievement Unlocked</a
-            >
-            <br /><br /><br />
-            <a href="game2/adarkroom" class="gamechild popular">A Dark Room</a>
-            <br /><br /><br />
-            <a href="game2/adrenalinechallenge" class="gamechild"
-                >Adrenaline Challenge</a
-            >
-            <br /><br /><br />
-            <a href="adrenalinechallenge2/" class="gamechild new"
-                >Adrenaline Challenge (New)</a
-            >
-            <br /><br /><br />
-            <a href="game2/adventure-drivers" class="gamechild"
-                >Adventure Drivers</a
-            >
-            <br /><br /><br />
-            <a href="game2/ages-of-conflict" class="gamechild"
-                >Ages of Conflict</a
-            >
-            <br /><br /><br />
-            <a href="game2/alienhominid" class="gamechild">Alien Hominid</a>
-            <br /><br /><br />
-            <a href="game2/align-4" class="gamechild">Align 4</a>
-            <br /><br /><br />
-            <a href="game2/amidst-the-clouds" class="gamechild"
-                >Amidst the Clouds</a
-            >
-            <br /><br /><br />
-            <a href="game2/among-us" class="gamechild notworking">Among Us</a>
-            <br /><br /><br />
-            <a href="game2/angry-sharks" class="gamechild">Angry Sharks</a>
-            <br /><br /><br />
-            <a href="angrybirds/Game/" class="gamechild new">Angry Birds</a>
-            <br /><br /><br />
-            <a href="game2/aquapark-slides" class="gamechild"
-                >Aquapark Slides</a
-            >
-            <br /><br /><br />
-            <a href="game2/astray" class="gamechild">Astray</a>
-            <br /><br /><br />
-            <a href="game2/avalanche" class="gamechild">Avalanche</a>
-            <br /><br /><br />
-            <a href="game2/awesometanks2" class="gamechild popular"
-                >Awesome Tanks 2</a
-            >
-            <br /><br /><br />
-            <a href="game2/backrooms" class="gamechild">Backrooms</a>
-            <br /><br /><br />
-            <a href="basketball-stars/" class="gamechild popular"
-                >Basketball Stars</a
-            >
-            <br /><br /><br />
-            <a href="basket-bros/" class="gamechild">Basket Bros</a>
-            <br /><br /><br />
-            <a href="basket-random/" class="gamechild popular">Basket Random</a>
-            <br /><br /><br />
-            <a href="bob-the-robber-2-main/" class="gamechild popular"
-                >Bob the Robber 2
-            </a>
-            <br /><br /><br />
-            <a href="game2/bad-ice-cream" class="gamechild">Bad Ice Cream</a>
-            <br /><br /><br />
-            <a href="game2/bad-ice-cream-2" class="gamechild"
-                >Bad Ice Cream 2</a
-            >
-            <br /><br /><br />
-            <a href="game2/bad-ice-cream-3" class="gamechild"
-                >Bad Ice Cream 3</a
-            >
-            <br /><br /><br />
-            <a href="game2/baldis-basics" class="gamechild">Baldi's Basics</a>
-            <br /><br /><br />
-            <a href="bitlife/" class="gamechild new">Bitlife</a>
-            <br /><br /><br />
-            <a href="block-blast/" class="gamechild popular">Block Blast</a>
-            <br /><br /><br />
-            <a href="breakout/" class="gamechild flash">Breakout</a>
-            <br /><br /><br />
-            <a href="browserkiller/" class="gamechild new">Browser Killer</a>
-            <br /><br /><br />
-            <a href="bloons-tower-defense/" class="gamechild popular"
-                >Bloons Tower Defense 3</a
-            >
-            <br /><br /><br />
-            <a href="candy-crush/" class="gamechild popular">Candy Crush</a>
-            <br /><br /><br />
-            <a href="chess/" class="gamechild new">Chess</a>
-            <br /><br /><br />
-            <a href="game2/cluster-rush" class="gamechild">Cluster Rush</a>
-            <br /><br /><br />
-            <a href="game2/cookie-clicker" class="gamechild popular"
-                >Cookie Clicker</a
-            >
-            <br /><br /><br />
-            <a href="game2/crossyroad" class="gamechild popular">Crossy Road</a>
-            <br /><br /><br />
-            <a href="dino-chrome-io-main/" class="gamechild new">Dino</a>
-            <br /><br /><br />
-            <a href="dig-to-china/" class="gamechild flash">Dig to China</a>
-            <br /><br /><br />
-            <a href="ducklife/" class="gamechild new">Duck Life</a>
-            <br /><br /><br />
-            <a href="duck-life-2/" class="gamechild new">Duck Life 2</a>
-            <br /><br /><br />
-            <a href="ducklife3/" class="gamechild new">Duck Life 3</a>
-            <br /><br /><br />
-            <a href="drift-boss/" class="gamechild new">Drift Boss</a>
-            <br /><br /><br />
-            <a href="drift-hunters/" class="gamechild popular">Drift Hunters</a>
-            <br /><br /><br />
-            <a href="doodlejump/" class="gamechild popular">Doodle Jump</a>
-            <br /><br /><br />
-            <a href="doom/" class="gamechild flash">Doom</a>
-            <br /><br /><br />
-            <a href="flappybird/bird.html" class="gamechild popular"
-                >Flappy Bird</a
-            >
-            <br /><br /><br />
-
-            <a href="fnaf-2-main/" class="gamechild popular">FNAF 2</a>
-            <br /><br /><br />
-            <a href="fnaf-4-main/" class="gamechild">FNAF 4</a>
-            <br /><br /><br />
-            <a href="game2/fluidsimulator" class="gamechild">Fluid Simulator</a>
-            <br /><br /><br />
-            <a
-                href="game2/fireboywatergirlforesttemple"
-                class="gamechild popular"
-                >Fireboy and Watergirl</a
-            >
-            <br /><br /><br />
-            <a href="footballbros.io/" class="gamechild">Football Bros</a>
-            <br /><br /><br />
-            <a href="geometrydash" class="gamechild flash">Geometry Dash</a>
-            <br /><br /><br />
-            <a href="real-geometry-dash/" class="gamechild popular"
-                >Geometry Dash (Lite)</a
-            >
-            <br /><br /><br />
-            <a href="game2/google-snake" class="gamechild popular"
-                >Google Snake</a
-            >
-            <br /><br /><br />
-            <a href="henrystickminbank/" class="gamechild flash"
-                >Henry Stickmin Breaking the Bank</a
-            >
-            <br /><br /><br />
-            <a href="henrystickminprison/" class="gamechild flash"
-                >Henry Stickmin Escaping the Prison</a
-            >
-            <br /><br /><br />
-            <a href="henrystickmincomplex/" class="gamechild flash"
-                >Henry Stickmin Fleeing the Complex</a
-            >
-            <br /><br /><br />
-            <a href="henrystickminpit/" class="gamechild flash"
-                >Henry Stickmin Crossing the Pit</a
-            >
-            <br /><br /><br />
-            <a href="henrystickminairship/" class="gamechild flash"
-                >Henry Stickmin Infiltrating the Airship</a
-            >
-            <br /><br /><br />
-            <a href="henrystickmindiamond/" class="gamechild flash"
-                >Henry Stickmin Stealing the Diamond</a
-            >
-            <br /><br /><br />
-            <a href="hole.io/file/" class="gamechild popular">Hole.io</a>
-            <br /><br /><br />
-            <a href="idle-breakout/" class="gamechild popular">Idle Breakout</a>
-            <br /><br /><br />
-            <a href="idkkk" class="gamechild">Delta</a>
-            <br /><br /><br />
-            <a href="game2/jetpack-joyride" class="gamechild popular"
-                >Jetpack Joyride</a
-            >
-            <br /><br /><br />
-            <a href="learn-to-fly-main/" class="gamechild flash"
-                >Learn To Fly</a
-            >
-            <br /><br /><br />
-            <a href="latest-minecraft/" class="gamechild popular"
-                >Minecraft (Newest, Recommended)</a
-            >
-            <br /><br /><br />
-            <a href="minecraft" class="gamechild">Minecraft</a>
-            <br /><br /><br />
-            <a href="new-minecraft/" class="gamechild"
-                >Minecraft (Newer, Multiplayer Only)</a
-            >
-            <br /><br /><br />
-            <a href="minecraft-pokemon/minecraft.html" class="gamechild modded"
-                >Minecraft Pokemon</a
-            >
-            <br /><br /><br />
-            <a href="minesweeper/mine.html" class="gamechild">Minesweeper</a>
-            <br /><br /><br />
-            <a href="game2/motox3m" class="gamechild flash">Moto X3M</a>
-            <br /><br /><br />
-            <a href="game2/motox3m-pool" class="gamechild flash"
-                >Moto X3M Pool</a
-            >
-            <br /><br /><br />
-            <a href="game2/motox3m-spooky" class="gamechild flash"
-                >Moto X3M Spooky</a
-            >
-            <br /><br /><br />
-            <a href="game2/motox3m-winter" class="gamechild flash"
-                >Moto X3M Winter</a
-            >
-            <br /><br /><br />
-            <a href="game2/motox3m2" class="gamechild flash">Moto X3M2</a>
-            <br /><br /><br />
-            <a href="oldosu" class="gamechild">Old OSU!online</a>
-            <br /><br /><br />
-            <a href="osu!online" class="gamechild">OSU!online</a>
-            <br /><br /><br />
-            <a href="game2/ovo" class="gamechild">Ovo</a>
-            <br /><br /><br />
-            <a href="game2/paperio2" class="gamechild new">Paper.io 2</a>
-            <br /><br /><br />
-            <a href="pacman/" class="gamechild emulator">Pacman</a>
-            <br /><br /><br />
-            <a href="pokemon-emerald/" class="gamechild emulator"
-                >Pokemon Emerald</a
-            >
-            <br /><br /><br />
-            <a href="pokemon-fire/" class="gamechild emulator">Pokemon Fire</a>
-            <br /><br /><br />
-            <a href="pokemon-leaf/" class="gamechild emulator">Pokemon Leaf</a>
-            <br /><br /><br />
-            <a href="papas-burgeria-main/" class="gamechild flash"
-                >Papa's Burgeria</a
-            >
-            <br /><br /><br />
-            <a href="papasfreezeria-main/" class="gamechild flash"
-                >Papa's Freezeria</a
-            >
-            <br /><br /><br />
-            <a href="papas-pizzaria-main/" class="gamechild flash"
-                >Papa's Pizzeria</a
-            >
-            <br /><br /><br />
-            <a href="runpx" class="gamechild new">Proxy (Active)</a>
-            <br /><br /><br />
-            <a href="https://dylansantwani.com/run.php" class="gamechild new"
-                >Proxy (Custom)</a
-            >
-            <br /><br /><br />
-            <a href="racing/v4.final.html" class="gamechild">Racing</a>
-            <br /><br /><br />
-            <a href="raft-wars/" class="gamechild popular">Raft Wars</a>
-            <br /><br /><br />
-            <a href="redball4/" class="gamechild flash">Red Ball 4</a>
-            <br /><br /><br />
-            <a href="retro-bowl/" class="gamechild popular">Retro Bowl</a>
-            <br /><br /><br />
-            <a href="retrobowlexploitguide.html" class="gamechild modded"
-                >Retro Bowl (Infinite Coaching Credits)</a
-            >
-            <br /><br /><br />
-            <a
-                href="retro-bowl-college-football-main/"
-                class="gamechild popular"
-                >Retro Bowl College</a
-            >
-            <br /><br /><br />
-            <a href="run/" class="gamechild flash">Run</a>
-            <br /><br /><br />
-            <a href="run2/" class="gamechild flash">Run 2</a>
-            <br /><br /><br />
-            <a href="run3/" class="gamechild flash">Run 3</a>
-            <br /><br /><br />
-            <a href="rooftop-snipers/" class="gamechild new">Rooftop Snipers</a>
-            <br /><br /><br />
-            <a href="RocketSoccerDerby/" class="gamechild new"
-                >Rocket Soccer Derby</a
-            >
-            <br /><br /><br />
-            <a href="self-titled/" class="gamechild new">Self Titled</a>
-            <br /><br /><br />
-            <a href="sandtris/" class="gamechild new">Sandtris</a>
-            <br /><br /><br />
-            <a href="slope/" class="gamechild popular">Slope</a>
-            <br /><br /><br />
-            <a href="stack/" class="gamechild">Stack</a>
-            <br /><br /><br />
-            <a href="stickman-hook/" class="gamechild popular">Stickman Hook</a>
-            <br /><br /><br />
-            <a href="subway-surfers/" class="gamechild popular"
-                >Subway Surfers</a
-            >
-            <br /><br /><br />
-            <a href="subway-surfers-new-york-main/" class="gamechild"
-                >Subway Surfers New York</a
-            >
-            <br /><br /><br />
-            <a href="super-mario-63/" class="gamechild emulator"
-                >Super Mario 63</a
-            >
-            <br /><br /><br />
-            <a href="super-mario-64-main/" class="gamechild emulator"
-                >Super Mario 64</a
-            >
-            <br /><br /><br />
-            <a href="super-star-car-main/" class="gamechild new"
-                >Super Star Car</a
-            >
-            <br /><br /><br />
-            <a href="subway-surfers-san-francisco-main/" class="gamechild"
-                >Subway Surfers San Francisco</a
-            >
-            <br /><br /><br />
-            <a href="subway-surfers-zurich-main/" class="gamechild"
-                >Subway Surfers Zurich</a
-            >
-            <br /><br /><br />
-            <a href="thereisnogame/" class="gamechild new">There is no game</a>
-            <br /><br /><br />
-            <a href="tetris/tetris.html" class="gamechild popular">Tetris</a>
-            <br /><br /><br />
-            <a href="templerun2/" class="gamechild notworking">Temple Run 2</a>
-            <br /><br /><br />
-            <a href="tetris-but-better/Tetris!.html" class="gamechild modded"
-                >Better Tetris</a
-            >
-            <br /><br /><br />
-            <a href="tictactoe" class="gamechild">Tic Tac Toe</a>
-            <br /><br /><br />
-            <a href="tictactoe-master/tictactoe.xhtml" class="gamechild"
-                >Tic Tac Toe 2</a
-            >
-            <br /><br /><br />
-            <a href="traffic-mania/" class="gamechild new">Traffic Mania</a>
-            <br /><br /><br />
-            <a href="tower-chinese" class="gamechild">Chinese Tower Game</a>
-            <br /><br /><br />
-            <a href="vex4/" class="gamechild new">Vex 4</a>
-            <br /><br /><br />
-            <a href="vex5/" class="gamechild new">Vex 5</a>
-            <br /><br /><br />
-            <a href="vex6" class="gamechild new">Vex 6</a>
-            <br /><br /><br />
-            <a href="vex7" class="gamechild popular">Vex 7</a>
-            <br /><br /><br />
-            <a href="game2/worldshardestgame/" class="gamechild popular"
-                >World's Hardest Game</a
-            >
-            <br /><br /><br />
-            <a href="game2/worldshardestgame2/" class="gamechild"
-                >World's Hardest Game 2</a
-            >
+            <h1 style="font-size: larger">Version from 12/7/24</h1>
             <p class="request-text">
                 Send game requests to
                 <a href="mailto:dylansantwani@gmail.com"
                     >dylansantwani@gmail.com</a
                 >
             </p>
-        </div>
-    </body>
+
+            <style>
+                .popular {
+                    color: plum;
+                }
+
+                .emulator {
+                    color: #6290c3;
+                }
+
+                .notworking {
+                    color: #ff0000;
+                }
+
+                .flash {
+                    color: #dd6e42;
+                }
+
+                .modded {
+                    color: #f1ffe7;
+                }
+
+                .new {
+                    color: #d6dbb2;
+                }
+            </style>
+            <script src="search.js"></script>
+            <p class="popular">Popular</p>
+            <p class="emulator">Emulated</p>
+            <p class="notworking">Not Working</p>
+            <p class="flash">Flash</p>
+            <p class="modded">Modded</p>
+            <p class="new">New</p>
+            <input
+                id="search"
+                type="text"
+                onchange="search()"
+                placeholder="Search..."
+                class="input"
+            />
+            <h1 style="font-size: larger"></h1>
+            <br /><br /><br />
+            <div id="parentcontainer" class="gamelist">
+                <a href="https://nchs.online/" class="gamechild popular"
+                    >Time Until End of Period</a
+                >
+                <br /><br /><br />
+                <a href="https://tvplayer.pages.dev" class="gamechild popular"
+                    >Watch TV/Movies</a
+                >
+                <br /><br /><br />
+
+                <a href="final-grade/" class="gamechild new"
+                    >Final Grade Calculator</a
+                >
+                <br /><br /><br />
+                <a
+                    href="game2/10-minutes-till-dawn/"
+                    class="gamechild notworking"
+                    >10 Minutes Till Dawn</a
+                >
+                <br /><br /><br />
+                <a href="game2/100ng" class="gamechild">100ng</a>
+                <br /><br /><br />
+                <a href="game2/1v1lol" class="gamechild">1v1LOL</a>
+                <br /><br /><br />
+                <a href="game2/1v1space" class="gamechild">1v1Space</a>
+                <br /><br /><br />
+                <a href="game2/2048-multitask" class="gamechild"
+                    >2048 Multitask</a
+                >
+                <br /><br /><br />
+                <a href="game2/2048" class="gamechild popular">2048</a>
+                <br /><br /><br />
+                <a
+                    href="4th-and-goal-2022-main/4th-and-goal-2022-main/"
+                    class="gamechild new"
+                    >4th and Goal</a
+                >
+                <br /><br /><br />
+
+                <a href="game2/9007199254740992" class="gamechild"
+                    >9007199254740992</a
+                >
+                <br /><br /><br />
+                <a href="game2/a-dance-of-fire-and-ice" class="gamechild"
+                    >A Dance of Fire and Ice</a
+                >
+                <br /><br /><br />
+                <a href="game2/achievementunlocked" class="gamechild"
+                    >Achievement Unlocked</a
+                >
+                <br /><br /><br />
+                <a href="game2/adarkroom" class="gamechild popular"
+                    >A Dark Room</a
+                >
+                <br /><br /><br />
+                <a href="game2/adrenalinechallenge" class="gamechild"
+                    >Adrenaline Challenge</a
+                >
+                <br /><br /><br />
+                <a href="adrenalinechallenge2/" class="gamechild new"
+                    >Adrenaline Challenge (New)</a
+                >
+                <br /><br /><br />
+                <a href="game2/adventure-drivers" class="gamechild"
+                    >Adventure Drivers</a
+                >
+                <br /><br /><br />
+                <a href="game2/ages-of-conflict" class="gamechild"
+                    >Ages of Conflict</a
+                >
+                <br /><br /><br />
+                <a href="game2/alienhominid" class="gamechild">Alien Hominid</a>
+                <br /><br /><br />
+                <a href="game2/align-4" class="gamechild">Align 4</a>
+                <br /><br /><br />
+                <a href="game2/amidst-the-clouds" class="gamechild"
+                    >Amidst the Clouds</a
+                >
+                <br /><br /><br />
+                <a href="game2/among-us" class="gamechild notworking"
+                    >Among Us</a
+                >
+                <br /><br /><br />
+                <a href="game2/angry-sharks" class="gamechild">Angry Sharks</a>
+                <br /><br /><br />
+                <a href="angrybirds/Game/" class="gamechild new">Angry Birds</a>
+                <br /><br /><br />
+                <a href="game2/aquapark-slides" class="gamechild"
+                    >Aquapark Slides</a
+                >
+                <br /><br /><br />
+                <a href="game2/astray" class="gamechild">Astray</a>
+                <br /><br /><br />
+                <a href="game2/avalanche" class="gamechild">Avalanche</a>
+                <br /><br /><br />
+                <a href="game2/awesometanks2" class="gamechild popular"
+                    >Awesome Tanks 2</a
+                >
+                <br /><br /><br />
+                <a href="game2/backrooms" class="gamechild">Backrooms</a>
+                <br /><br /><br />
+                <a href="basketball-stars/" class="gamechild popular"
+                    >Basketball Stars</a
+                >
+                <br /><br /><br />
+                <a href="basket-bros/" class="gamechild">Basket Bros</a>
+                <br /><br /><br />
+                <a href="basket-random/" class="gamechild popular"
+                    >Basket Random</a
+                >
+                <br /><br /><br />
+                <a href="bob-the-robber-2-main/" class="gamechild popular"
+                    >Bob the Robber 2
+                </a>
+                <br /><br /><br />
+                <a href="BobTheRobber4-gh-pages/" class="gamechild new"
+                    >Bob the Robber 4
+                </a>
+                <br /><br /><br />
+                <a href="game2/bad-ice-cream" class="gamechild"
+                    >Bad Ice Cream</a
+                >
+                <br /><br /><br />
+                <a href="game2/bad-ice-cream-2" class="gamechild"
+                    >Bad Ice Cream 2</a
+                >
+                <br /><br /><br />
+                <a href="game2/bad-ice-cream-3" class="gamechild"
+                    >Bad Ice Cream 3</a
+                >
+                <br /><br /><br />
+                <a href="game2/baldis-basics" class="gamechild"
+                    >Baldi's Basics</a
+                >
+                <br /><br /><br />
+                <a href="bitlife/" class="gamechild new">Bitlife</a>
+                <br /><br /><br />
+                <a href="block-blast/" class="gamechild popular">Block Blast</a>
+                <br /><br /><br />
+                <a href="breakout/" class="gamechild flash">Breakout</a>
+                <br /><br /><br />
+                <a href="browserkiller/" class="gamechild new"
+                    >Browser Killer</a
+                >
+                <br /><br /><br />
+                <a href="bloons-tower-defense/" class="gamechild popular"
+                    >Bloons Tower Defense 3</a
+                >
+                <br /><br /><br />
+                <a href="candy-crush/" class="gamechild popular">Candy Crush</a>
+                <br /><br /><br />
+                <a href="chess/" class="gamechild new">Chess</a>
+                <br /><br /><br />
+                <a href="game2/cluster-rush" class="gamechild">Cluster Rush</a>
+                <br /><br /><br />
+                <a href="game2/cookie-clicker" class="gamechild popular"
+                    >Cookie Clicker</a
+                >
+                <br /><br /><br />
+                <a href="game2/crossyroad" class="gamechild popular"
+                    >Crossy Road</a
+                >
+                <br /><br /><br />
+                <a href="dino-chrome-io-main/" class="gamechild new">Dino</a>
+                <br /><br /><br />
+                <a href="dig-to-china/" class="gamechild flash">Dig to China</a>
+                <br /><br /><br />
+                <a href="ducklife/" class="gamechild new">Duck Life</a>
+                <br /><br /><br />
+                <a href="duck-life-2/" class="gamechild new">Duck Life 2</a>
+                <br /><br /><br />
+                <a href="ducklife3/" class="gamechild new">Duck Life 3</a>
+                <br /><br /><br />
+                <a href="drift-boss/" class="gamechild new">Drift Boss</a>
+                <br /><br /><br />
+                <a href="drift-hunters/" class="gamechild popular"
+                    >Drift Hunters</a
+                >
+                <br /><br /><br />
+                <a href="doodlejump/" class="gamechild popular">Doodle Jump</a>
+                <br /><br /><br />
+                <a href="doom/" class="gamechild flash">Doom</a>
+                <br /><br /><br />
+                <a href="flappybird/bird.html" class="gamechild popular"
+                    >Flappy Bird</a
+                >
+                <br /><br /><br />
+                <a
+                    href="Five-Nights-at-Freddys-Web-main/"
+                    class="gamechild popular"
+                    >FNAF Web</a
+                >
+                <br /><br /><br />
+                <a href="fnaf-2-main/" class="gamechild">FNAF 2</a>
+                <br /><br /><br />
+                <a href="fnaf-4-main/" class="gamechild">FNAF 4</a>
+                <br /><br /><br />
+                <a href="fnaf4-web-main/" class="gamechild new">FNAF 4 (Web)</a>
+                <br /><br /><br />
+                <a href="game2/fluidsimulator" class="gamechild"
+                    >Fluid Simulator</a
+                >
+                <br /><br /><br />
+                <a
+                    href="game2/fireboywatergirlforesttemple"
+                    class="gamechild popular"
+                    >Fireboy and Watergirl</a
+                >
+                <br /><br /><br />
+                <a href="footballbros.io/" class="gamechild">Football Bros</a>
+                <br /><br /><br />
+                <a href="geometrydash" class="gamechild flash">Geometry Dash</a>
+                <br /><br /><br />
+                <a href="real-geometry-dash/" class="gamechild popular"
+                    >Geometry Dash (Lite)</a
+                >
+                <br /><br /><br />
+                <a href="game2/google-snake" class="gamechild popular"
+                    >Google Snake</a
+                >
+                <br /><br /><br />
+                <a href="henrystickminbank/" class="gamechild flash"
+                    >Henry Stickmin Breaking the Bank</a
+                >
+                <br /><br /><br />
+                <a href="henrystickminprison/" class="gamechild flash"
+                    >Henry Stickmin Escaping the Prison</a
+                >
+                <br /><br /><br />
+                <a href="henrystickmincomplex/" class="gamechild flash"
+                    >Henry Stickmin Fleeing the Complex</a
+                >
+                <br /><br /><br />
+                <a href="henrystickminpit/" class="gamechild flash"
+                    >Henry Stickmin Crossing the Pit</a
+                >
+                <br /><br /><br />
+                <a href="henrystickminairship/" class="gamechild flash"
+                    >Henry Stickmin Infiltrating the Airship</a
+                >
+                <br /><br /><br />
+                <a href="henrystickmindiamond/" class="gamechild flash"
+                    >Henry Stickmin Stealing the Diamond</a
+                >
+                <br /><br /><br />
+                <a href="hill-climb-racing-2-main/" class="gamechild popular"
+                    >Hill Climb Racing</a
+                >
+                <br /><br /><br />
+                <a href="hole.io/file/" class="gamechild popular">Hole.io</a>
+                <br /><br /><br />
+                <a href="idle-breakout/" class="gamechild popular"
+                    >Idle Breakout</a
+                >
+                <br /><br /><br />
+                <a href="idkkk" class="gamechild">Delta</a>
+                <br /><br /><br />
+                <a href="game2/jetpack-joyride" class="gamechild popular"
+                    >Jetpack Joyride</a
+                >
+                <br /><br /><br />
+                <a href="learn-to-fly-main/" class="gamechild flash"
+                    >Learn To Fly</a
+                >
+                <br /><br /><br />
+                <a href="latest-minecraft/" class="gamechild popular"
+                    >Minecraft (Newest, Recommended)</a
+                >
+                <br /><br /><br />
+                <a href="minecraft" class="gamechild">Minecraft</a>
+                <br /><br /><br />
+                <a href="new-minecraft/" class="gamechild"
+                    >Minecraft (Newer, Multiplayer Only)</a
+                >
+                <br /><br /><br />
+                <a
+                    href="minecraft-pokemon/minecraft.html"
+                    class="gamechild modded"
+                    >Minecraft Pokemon</a
+                >
+                <br /><br /><br />
+                <a href="minesweeper/mine.html" class="gamechild"
+                    >Minesweeper</a
+                >
+                <br /><br /><br />
+                <a href="game2/motox3m" class="gamechild flash">Moto X3M</a>
+                <br /><br /><br />
+                <a href="game2/motox3m-pool" class="gamechild flash"
+                    >Moto X3M Pool</a
+                >
+                <br /><br /><br />
+                <a href="game2/motox3m-spooky" class="gamechild flash"
+                    >Moto X3M Spooky</a
+                >
+                <br /><br /><br />
+                <a href="game2/motox3m-winter" class="gamechild flash"
+                    >Moto X3M Winter</a
+                >
+                <br /><br /><br />
+                <a href="game2/motox3m2" class="gamechild flash">Moto X3M2</a>
+                <br /><br /><br />
+                <a href="only-up-2-main/" class="gamechild">Only Up 2</a>
+                <br /><br /><br />
+                <a href="oldosu" class="gamechild">Old OSU!online</a>
+                <br /><br /><br />
+                <a href="osu!online" class="gamechild">OSU!online</a>
+                <br /><br /><br />
+                <a href="game2/ovo" class="gamechild">Ovo</a>
+                <br /><br /><br />
+                <a href="game2/paperio2" class="gamechild new">Paper.io 2</a>
+                <br /><br /><br />
+                <a href="pacman/" class="gamechild emulator">Pacman</a>
+                <br /><br /><br />
+                <a href="pokemon-emerald/" class="gamechild emulator"
+                    >Pokemon Emerald</a
+                >
+                <br /><br /><br />
+                <a href="pokemon-fire/" class="gamechild emulator"
+                    >Pokemon Fire</a
+                >
+                <br /><br /><br />
+                <a href="pokemon-leaf/" class="gamechild emulator"
+                    >Pokemon Leaf</a
+                >
+                <br /><br /><br />
+                <a href="papas-burgeria-main/" class="gamechild flash"
+                    >Papa's Burgeria</a
+                >
+                <br /><br /><br />
+                <a href="papasfreezeria-main/" class="gamechild flash"
+                    >Papa's Freezeria</a
+                >
+                <br /><br /><br />
+                <a href="papas-pizzaria-main/" class="gamechild flash"
+                    >Papa's Pizzeria</a
+                >
+                <br /><br /><br />
+                <a href="runpx" class="gamechild new">Proxy (Active)</a>
+                <br /><br /><br />
+                <a
+                    href="https://dylansantwani.com/run.php"
+                    class="gamechild new"
+                    >Proxy (Custom)</a
+                >
+                <br /><br /><br />
+                <a href="racing/v4.final.html" class="gamechild">Racing</a>
+                <br /><br /><br />
+                <a href="raft-wars/" class="gamechild popular">Raft Wars</a>
+                <br /><br /><br />
+                <a href="raft-wars-2-main/" class="gamechild new"
+                    >Raft Wars 2</a
+                >
+                <br /><br /><br />
+                <a href="redball4/" class="gamechild flash">Red Ball 4</a>
+                <br /><br /><br />
+                <a href="retro-bowl/" class="gamechild popular">Retro Bowl</a>
+                <br /><br /><br />
+                <a href="retrobowlexploitguide.html" class="gamechild modded"
+                    >Retro Bowl (Infinite Coaching Credits)</a
+                >
+                <br /><br /><br />
+                <a
+                    href="retro-bowl-college-football-main/"
+                    class="gamechild popular"
+                    >Retro Bowl College</a
+                >
+                <br /><br /><br />
+                <a href="run/" class="gamechild flash">Run</a>
+                <br /><br /><br />
+                <a href="run2/" class="gamechild flash">Run 2</a>
+                <br /><br /><br />
+                <a href="run3/" class="gamechild flash">Run 3</a>
+                <br /><br /><br />
+                <a href="rooftop-snipers/" class="gamechild new"
+                    >Rooftop Snipers</a
+                >
+                <br /><br /><br />
+                <a href="RocketSoccerDerby/" class="gamechild new"
+                    >Rocket Soccer Derby</a
+                >
+                <br /><br /><br />
+                <a href="self-titled/" class="gamechild new">Self Titled</a>
+                <br /><br /><br />
+                <a href="sandtris/" class="gamechild new">Sandtris</a>
+                <br /><br /><br />
+                <a href="slope/" class="gamechild popular">Slope</a>
+                <br /><br /><br />
+                <a href="stack/" class="gamechild">Stack</a>
+                <br /><br /><br />
+                <a href="stickman-hook/" class="gamechild popular"
+                    >Stickman Hook</a
+                >
+                <br /><br /><br />
+                <a href="subway-surfers/" class="gamechild popular"
+                    >Subway Surfers</a
+                >
+                <br /><br /><br />
+                <a href="subway-surfers-new-york-main/" class="gamechild"
+                    >Subway Surfers New York</a
+                >
+                <br /><br /><br />
+                <a href="superhot-main/" class="gamechild new">Superhot</a>
+                <br /><br /><br />
+                <a href="super-mario-63/" class="gamechild emulator"
+                    >Super Mario 63</a
+                >
+                <br /><br /><br />
+                <a href="super-mario-64-main/" class="gamechild emulator"
+                    >Super Mario 64</a
+                >
+                <br /><br /><br />
+                <a href="super-star-car-main/" class="gamechild new"
+                    >Super Star Car</a
+                >
+                <br /><br /><br />
+                <a href="subway-surfers-san-francisco-main/" class="gamechild"
+                    >Subway Surfers San Francisco</a
+                >
+                <br /><br /><br />
+                <a href="subway-surfers-zurich-main/" class="gamechild"
+                    >Subway Surfers Zurich</a
+                >
+                <br /><br /><br />
+                <a href="thereisnogame/" class="gamechild new"
+                    >There is no game</a
+                >
+                <br /><br /><br />
+                <a href="tetris/tetris.html" class="gamechild popular"
+                    >Tetris</a
+                >
+                <br /><br /><br />
+                <a href="templerun2/" class="gamechild notworking"
+                    >Temple Run 2</a
+                >
+                <br /><br /><br />
+                <a
+                    href="tetris-but-better/Tetris!.html"
+                    class="gamechild modded"
+                    >Better Tetris</a
+                >
+                <br /><br /><br />
+                <a href="tictactoe" class="gamechild">Tic Tac Toe</a>
+                <br /><br /><br />
+                <a href="tictactoe-master/tictactoe.xhtml" class="gamechild"
+                    >Tic Tac Toe 2</a
+                >
+                <br /><br /><br />
+                <a href="time-shooter-2-main/" class="gamechild new"
+                    >Time Shooter 2</a
+                >
+                <br /><br /><br />
+                <a href="traffic-mania/" class="gamechild new">Traffic Mania</a>
+                <br /><br /><br />
+                <a href="tower-chinese" class="gamechild">Chinese Tower Game</a>
+                <br /><br /><br />
+                <a href="tower-defense-2d-main/" class="gamechild new"
+                    >Tower Defense 2D</a
+                >
+                <br /><br /><br />
+                <a href="vex4/" class="gamechild new">Vex 4</a>
+                <br /><br /><br />
+                <a href="vex5/" class="gamechild new">Vex 5</a>
+                <br /><br /><br />
+                <a href="vex6" class="gamechild new">Vex 6</a>
+                <br /><br /><br />
+                <a href="vex7" class="gamechild popular">Vex 7</a>
+                <br /><br /><br />
+                <a href="vex-8-main/" class="gamechild new">Vex 8</a>
+                <br /><br /><br />
+                <a href="game2/worldshardestgame/" class="gamechild popular"
+                    >World's Hardest Game</a
+                >
+                <br /><br /><br />
+                <a href="game2/worldshardestgame2/" class="gamechild"
+                    >World's Hardest Game 2</a
+                >
+                <br /><br /><br />
+
+                <a href="worlds-hardest-game-3-main/" class="gamechild new"
+                    >World's Hardest Game 3</a
+                >
+                <br /><br /><br />
+                <p class="request-text">
+                    Send game requests to
+                    <a href="mailto:dylansantwani@gmail.com"
+                        >dylansantwani@gmail.com</a
+                    >
+                </p>
+            </div>
+        </body>
+    </html>
 </html>
