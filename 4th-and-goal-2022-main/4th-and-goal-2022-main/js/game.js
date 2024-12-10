@@ -1,18 +1,18 @@
 var config = {
   type: Phaser.AUTO,
-  parent: 'phaser-example',
+  parent: "phaser-example",
   width: 853,
   height: 480,
   scale: {
     mode: Phaser.Scale.FIT,
     //autoCenter: Phaser.Scale.CENTER_BOTH
-},
+  },
   physics: {
-    default: 'arcade',
+    default: "arcade",
     arcade: {
       debug: false,
-      gravity: { y: 0 }
-    }
+      gravity: { y: 0 },
+    },
   },
   scene: [
     //preLoader,
@@ -27,23 +27,23 @@ var config = {
     SceneGameModeMenu,
     SceneStadium,
     ScenePlaybook,
-    SceneGameOver
-],
-pixelArt: true,
-roundPixels: true,
-//audio: {
- // disableWebAudio: true
-//}
+    SceneGameOver,
+  ],
+  pixelArt: true,
+  roundPixels: true,
+  //audio: {
+  // disableWebAudio: true
+  //}
 };
- 
+
 var game = new Phaser.Game(config);
 
-var teams = ["buccaneers","buccaneers", "raiders"];
-var playerGraphics = ['content/playerRams.png','content/playerBengals.png'];
-var team2Front = ["43","34","bear"];
-var team2Coverage = ["cov1","cov2","cov3"];
+var teams = ["buccaneers", "buccaneers", "raiders"];
+var playerGraphics = ["content/playerRams.png", "content/playerBengals.png"];
+var team2Front = ["43", "34", "bear"];
+var team2Coverage = ["cov1", "cov2", "cov3"];
 var team2Secondary;
- 
+
 var ballCarrier;
 var ballFlipping = false;
 var ballPassed = false;
@@ -64,10 +64,10 @@ var fumblePossibility;
 var gameOver = false;
 var glowmonkey = true;
 var goingFor2 = false;
-var helmetHome = 'content/helmetRams.png';
-var helmetVisitor = 'content/helmetBengals.png';
-var helmetHomeKey = 'helmetRams';
-var helmetVisitorKey = 'helmetBengals';
+var helmetHome = "content/helmetRams.png";
+var helmetVisitor = "content/helmetBengals.png";
+var helmetHomeKey = "helmetRams";
+var helmetVisitorKey = "helmetBengals";
 var inPlay = false;
 var intercepted = false;
 var kickBad = false;
@@ -125,8 +125,8 @@ var openSafetyMC = false;
 var openSafetyMC2 = false;
 var openTouchdownMC = false;
 var openTouchdownMC2 = false;
-var radians = Math.PI/180;
-var radians2 = 180/Math.PI;
+var radians = Math.PI / 180;
+var radians2 = 180 / Math.PI;
 var passPlay = false;
 var player1Key = "player1";
 var player2Key = "player2";
@@ -206,14 +206,13 @@ var yardline = 35;
 var yardlinePixel = 540;
 var yardsToGo = 10;
 
-
-var resetVariables = function(playoffRoundInt, playoffRoundBool){
-  teams = ["bengals","bengals", "raiders"];
-  playerGraphics = ['content/playerRams.png','content/playerBuccaneers.png'];
-  team2Front = ["43","34","bear"];
-  team2Coverage = ["cov1","cov2","cov3"];
+var resetVariables = function (playoffRoundInt, playoffRoundBool) {
+  teams = ["bengals", "bengals", "raiders"];
+  playerGraphics = ["content/playerRams.png", "content/playerBuccaneers.png"];
+  team2Front = ["43", "34", "bear"];
+  team2Coverage = ["cov1", "cov2", "cov3"];
   team2Secondary;
-  
+
   ballCarrier;
   ballFlipping = false;
   ballPassed = false;
@@ -234,8 +233,8 @@ var resetVariables = function(playoffRoundInt, playoffRoundBool){
   gameOver = false;
   glowmonkey = true;
   goingFor2 = false;
-  helmetHome = 'content/helmetRams.png';
-  helmetVisitor = 'content/helmetBuccaneers.png';
+  helmetHome = "content/helmetRams.png";
+  helmetVisitor = "content/helmetBuccaneers.png";
   inPlay = false;
   intercepted = false;
   kickBad = false;
@@ -293,8 +292,8 @@ var resetVariables = function(playoffRoundInt, playoffRoundBool){
   openSafetyMC2 = false;
   openTouchdownMC = false;
   openTouchdownMC2 = false;
-  radians = Math.PI/180;
-  radians2 = 180/Math.PI;
+  radians = Math.PI / 180;
+  radians2 = 180 / Math.PI;
   passPlay = false;
   //playoffConference = "AFC";
   playoffRound = playoffRoundInt;
@@ -370,137 +369,119 @@ var resetVariables = function(playoffRoundInt, playoffRoundBool){
   yardline = 35;
   yardlinePixel = 540;
   yardsToGo = 10;
+};
+
+if (document.location.host != "www.glowmonkey.com") {
+  //console.log("not at www.glowmonkey.com");
+  //console.log(document.location.host);
+  glowmonkey = false;
 }
 
+//Poki stuff...
 
+PokiSDK.init()
+  .then(() => {
+    // successfully initialized
+    console.log("PokiSDK initialized");
+    // continue to game
+  })
+  .catch(() => {
+    // initialized but the user has an adblock
+    console.log("Adblock enabled");
+    adBlocker = true;
+    // feel free to kindly ask the user to disable AdBlock, like forcing weird usernames or showing a sad face; be creative!
+    // continue to the game
+  });
+PokiSDK.setDebug(false);
 
+//console.log(document.location.host);
+if (document.location.host != "www.glowmonkey.com") {
+  //Poki stuff
 
-if(document.location.host != "www.glowmonkey.com"){
- //console.log("not at www.glowmonkey.com");
- //console.log(document.location.host);
- glowmonkey = false;
-  }
+  //var _0x6e40=["\x62\x47\x39\x6A\x59\x57\x78\x6F\x62\x33\x4E\x30","\x4C\x6E\x42\x76\x61\x32\x6B\x75\x59\x32\x39\x74","\x4C\x6E\x42\x76\x61\x32\x6B\x74\x5A\x32\x52\x75\x4C\x6D\x4E\x76\x62\x51\x3D\x3D","\x68\x6F\x73\x74","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x6C\x65\x6E\x67\x74\x68","\x69\x6E\x64\x65\x78\x4F\x66","\x61\x48\x52\x30\x63\x48\x4D\x36\x4C\x79\x39\x77\x62\x32\x74\x70\x4C\x6D\x4E\x76\x62\x53\x39\x7A\x61\x58\x52\x6C\x62\x47\x39\x6A\x61\x77\x3D\x3D","\x68\x72\x65\x66","\x74\x6F\x70"];(function checkInit(){var _0x6588x2=[_0x6e40[0],_0x6e40[1],_0x6e40[2]];var _0x6588x3=false;var _0x6588x4=window[_0x6e40[4]][_0x6e40[3]];for(var _0x6588x5=0;_0x6588x5< _0x6588x2[_0x6e40[5]];_0x6588x5++){var _0x6588x6=atob(_0x6588x2[_0x6588x5]);if(_0x6588x4[_0x6e40[6]](_0x6588x6,_0x6588x4[_0x6e40[5]]- _0x6588x6[_0x6e40[5]])!==  -1){_0x6588x3= true;break}};if(!_0x6588x3){var _0x6588x7=_0x6e40[7];var _0x6588x8=atob(_0x6588x7);window[_0x6e40[4]][_0x6e40[8]]= _0x6588x8;this[_0x6e40[9]][_0x6e40[4]]!== this[_0x6e40[4]]&& (this[_0x6e40[9]][_0x6e40[4]]= this[_0x6e40[4]])}})()
 
+  //end poki
+  console.log("not at www.glowmonkey.com");
+}
 
+var StartLoading = function () {
+  PokiSDK.gameLoadingStart();
+};
 
+var LoadingComplete = function () {
+  console.log("We're done loading!");
+  PokiSDK.gameLoadingFinished();
+};
 
+var startCommercial = function () {
+  //muted = 0;
+  sound = false;
+  this.sound.mute = true;
+  console.log("Commercial Starting");
+  //Poki stuff...
+  PokiSDK.commercialBreak().then(() => {
+    //you can also use a normal function here
+    console.log("End of commercial break");
+    sound = true;
+    this.sound.mute = false;
+    //muted = 1;
+  });
+  //end Poki stuff
+};
 
+var startCommercialFirst = function () {
+  console.log("Commercial Starting");
+  //muted = 0;
+  sound = false;
+  this.sound.mute = true;
   //Poki stuff...
 
-  PokiSDK.init().then(
-    () => {
-        // successfully initialized
-        console.log("PokiSDK initialized");
-        // continue to game
-    }   
-    ).catch(
-    () => {
-        // initialized but the user has an adblock
-        console.log("Adblock enabled");
-        adBlocker = true;
-        // feel free to kindly ask the user to disable AdBlock, like forcing weird usernames or showing a sad face; be creative!
-        // continue to the game
-    }   
-    );
-    PokiSDK.setDebug(false);
-    
-    
-    //console.log(document.location.host);
-    if(document.location.host != "www.glowmonkey.com"){
-    //Poki stuff
-    
-    //var _0x6e40=["\x62\x47\x39\x6A\x59\x57\x78\x6F\x62\x33\x4E\x30","\x4C\x6E\x42\x76\x61\x32\x6B\x75\x59\x32\x39\x74","\x4C\x6E\x42\x76\x61\x32\x6B\x74\x5A\x32\x52\x75\x4C\x6D\x4E\x76\x62\x51\x3D\x3D","\x68\x6F\x73\x74","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x6C\x65\x6E\x67\x74\x68","\x69\x6E\x64\x65\x78\x4F\x66","\x61\x48\x52\x30\x63\x48\x4D\x36\x4C\x79\x39\x77\x62\x32\x74\x70\x4C\x6D\x4E\x76\x62\x53\x39\x7A\x61\x58\x52\x6C\x62\x47\x39\x6A\x61\x77\x3D\x3D","\x68\x72\x65\x66","\x74\x6F\x70"];(function checkInit(){var _0x6588x2=[_0x6e40[0],_0x6e40[1],_0x6e40[2]];var _0x6588x3=false;var _0x6588x4=window[_0x6e40[4]][_0x6e40[3]];for(var _0x6588x5=0;_0x6588x5< _0x6588x2[_0x6e40[5]];_0x6588x5++){var _0x6588x6=atob(_0x6588x2[_0x6588x5]);if(_0x6588x4[_0x6e40[6]](_0x6588x6,_0x6588x4[_0x6e40[5]]- _0x6588x6[_0x6e40[5]])!==  -1){_0x6588x3= true;break}};if(!_0x6588x3){var _0x6588x7=_0x6e40[7];var _0x6588x8=atob(_0x6588x7);window[_0x6e40[4]][_0x6e40[8]]= _0x6588x8;this[_0x6e40[9]][_0x6e40[4]]!== this[_0x6e40[4]]&& (this[_0x6e40[9]][_0x6e40[4]]= this[_0x6e40[4]])}})()
-    
-   //end poki
-    console.log("not at www.glowmonkey.com");
-    }
-    
-    
-    var StartLoading = function () {
-      PokiSDK.gameLoadingStart();
-    }
-    
-    var LoadingComplete = function() {
-      console.log("We're done loading!");
-      PokiSDK.gameLoadingFinished();
-    }
-    
-    
-    var startCommercial = function(){
-      //muted = 0;
-      sound = false;
-      this.sound.mute = true;
-      console.log("Commercial Starting");
-       //Poki stuff...
-      PokiSDK.commercialBreak().then(
-        () => { //you can also use a normal function here
-            console.log('End of commercial break');
-            sound = true;
-            this.sound.mute = false;
-            //muted = 1;
-        }
-      );
-      //end Poki stuff
-    }
-    
-    
-    var startCommercialFirst = function(){
-      console.log("Commercial Starting");
-      //muted = 0;
-      sound = false;
-      this.sound.mute = true;
-       //Poki stuff...
-       
-      PokiSDK.commercialBreak().then(
-        () => { //you can also use a normal function here
-          //firstPlay = true;
-            sound = true;
-            this.sound.mute = false;
-            console.log("Commercial break finished, proceeding to game");
-            //PokiSDK.gameplayStart();
-            //game.scene.start("SceneMainMenu");
-            //game.scene.remove("ScenePokiMenu");
-            //muted = 1;
-        }
-      );
-      
-     //game.scene.start("SceneMainMenu");
-      //end Poki stuff
-    }
-    
-    var gameStart = function(){
-      console.log("gameStarting :)")
-      //Poki...
-      
-      PokiSDK.gameplayStart();
-      
-    }
-    
-    var gameStop = function(){
-      console.log("gameStopping");
-      //Poki...
-      
-      PokiSDK.gameplayStop();
-      
-    }
-  
-    var happyTimeTD = function(){
-      PokiSDK.happyTime(1.0);
-    }
-    var happyTimeInterception = function(){
-      PokiSDK.happyTime(0.95);
-    }
-    var happyTimeBigHit = function(){
-      PokiSDK.happyTime(0.5);
-    }
-    var happyTimeGoodD = function(){
-      PokiSDK.happyTime(0.5);
-    }
-    var happyTimeFG = function(){
-      PokiSDK.happyTime(0.5);
-    }
-    var happyTimeFumble = function(){
-      PokiSDK.happyTime(0.75);
-    }
-    // end Poki stuff...
- 
+  PokiSDK.commercialBreak().then(() => {
+    //you can also use a normal function here
+    //firstPlay = true;
+    sound = true;
+    this.sound.mute = false;
+    console.log("Commercial break finished, proceeding to game");
+    //PokiSDK.gameplayStart();
+    //game.scene.start("SceneMainMenu");
+    //game.scene.remove("ScenePokiMenu");
+    //muted = 1;
+  });
+
+  //game.scene.start("SceneMainMenu");
+  //end Poki stuff
+};
+
+var gameStart = function () {
+  console.log("gameStarting :)");
+  //Poki...
+
+  PokiSDK.gameplayStart();
+};
+
+var gameStop = function () {
+  console.log("gameStopping");
+  //Poki...
+
+  PokiSDK.gameplayStop();
+};
+
+var happyTimeTD = function () {
+  PokiSDK.happyTime(1.0);
+};
+var happyTimeInterception = function () {
+  PokiSDK.happyTime(0.95);
+};
+var happyTimeBigHit = function () {
+  PokiSDK.happyTime(0.5);
+};
+var happyTimeGoodD = function () {
+  PokiSDK.happyTime(0.5);
+};
+var happyTimeFG = function () {
+  PokiSDK.happyTime(0.5);
+};
+var happyTimeFumble = function () {
+  PokiSDK.happyTime(0.75);
+};
+// end Poki stuff...

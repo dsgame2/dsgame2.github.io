@@ -12,7 +12,7 @@ function loadJS(FILE_URL, async = true) {
     console.log("ubg235 served!");
   });
 
-   // Error
+  // Error
   scriptEle.addEventListener("error", () => {
     console.log("ubg235 error!");
   });

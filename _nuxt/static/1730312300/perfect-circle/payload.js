@@ -1,1 +1,1 @@
-__NUXT_JSONP__("/perfect-circle", {data:[{}],fetch:{},mutations:[]});
+__NUXT_JSONP__("/perfect-circle", { data: [{}], fetch: {}, mutations: [] });
